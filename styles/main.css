@@ -2,16 +2,20 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
 }
+
 html {
   height: 100%;
   font-size: 100%;
+
 }
 
 body {
   font-family: 'Open Sans';
   color: white;
   min-height: 100%;
+
 }
 
 .navbar {
@@ -19,6 +23,7 @@ body {
   padding: 0.5rem;
   background-color: rgba(101,18,95,0.5);
   z-index: 1;
+
 }
 
 .navbar .logo {
