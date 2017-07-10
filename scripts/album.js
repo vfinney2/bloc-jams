@@ -2,6 +2,7 @@ var setSong = function(songNumber) {
  if(currentSoundFile) {
    currentSoundFile.stop();
  }
+  
  currentlyPlayingSongNumber = parseInt(songNumber);
  currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
  currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
