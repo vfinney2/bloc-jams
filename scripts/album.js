@@ -178,9 +178,36 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var $clickBar = $('.main-controls .play-pause');
+
+var togglePlayFromPlayerBar = function () {
+  if (currentSoundFile === null) {
+    setSong(1);
+    currentSoundFile.play();  
+    currentlyPlayingCell  = getSongNumberCell(1);
+    currentlyPlayingCell.html(pauseButtonTemplate);
+ 
+    
+  } else if (currentlyPlayingSongNumber) {
+    
+       if (currentSoundFile.isPaused ()) {
+         currentSoundFile.play();
+         $('.main-controls .play-pause').html(playerBarPauseButton);
+         getSongNumberCell(currentlyPlayingSongNumber).html(pauseButtonTemplate);
+        
+} else  { 
+      currentSoundFile.pause();
+      $('.main-controls .play-pause').html(playerBarPlayButton);
+       getSongNumberCell(currentlyPlayingSongNumber).html(pauseButtonTemplate);
+
+     }
+
+  }
+};
 
  $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
+     $clickBar.click(togglePlayFromPlayerBar);
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
 
